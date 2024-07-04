@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,7 +29,6 @@ public class ProductService {
     }
     public List<ProductResponse> getAllProducts () {
         List<Product> products = productRepository.findAll();
-        List<Product> productsl = new ArrayList<>();
         return products.stream().map(this::mapToProductResponse).toList();
     }
 
